@@ -1,17 +1,8 @@
-import express from 'express'; 
+const app = require('./app');
 require('dotenv').config();
-const app = express();
-const port = process.env.PORT || 5000; 
 
-// This displays message that the server running and listening to specified port
-app.listen(port, () => console.log(`Listening on port ${port}`)); 
-
-// create a GET route
-app.get('/express_backend', (req, res) => { 
-  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); 
-}); 
+app.listen(process.env.port, () => {
+    console.log(`Server jookseb pordil: ${process.env.port}`)
+  });
 
 
-app.get("/temperatuur", function(req, res){
-	res.send('temperatuuri endpoint');
-})
